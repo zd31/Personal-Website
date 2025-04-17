@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Light luxury background */
+            color: #333;
+        }
+        #welcome-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #5a189a; /* Deep purple for luxury */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px; /* Increase the height of the header */
+            background: rgba(90, 24, 154, 0.8); /* Deep purple with transparency */
+            color: white;
+            display: flex;
+            justify-content: center; /* Center the buttons horizontally */
+            align-items: center; /* Center the buttons vertically */
+            padding: 1rem;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        header:hover {
+            background: rgba(90, 24, 154, 0.5); /* More transparent on hover */
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem; /* Add spacing between buttons */
+            font-size: 1.2rem; /* Increase font size for better visibility */
+            cursor: pointer;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        section {
+            display: none; /* Hide all sections by default */
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9); /* White with transparency for shaded effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 5rem;
+            border-radius: 10px;
+        }
+        section.active {
+            display: block; /* Show the active section */
+        }
+        section h2 {
+            background: #333; /* Match footer background color */
+            color: white; /* White text for contrast */
+            padding: 1rem;
+            margin: 0;
+            border-radius: 10px 10px 0 0;
+            font-weight: normal; /* Remove bold styling */
+        }
+        section h3 {
+            background: #333; /* Match footer background color */
+            color: white; /* White text for contrast */
+            padding: 0.5rem;
+            margin: 1rem 0 0;
+            border-radius: 5px;
+            font-weight: normal; /* Remove bold styling */
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+        a {
+            color: #5a189a;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Style for figure captions */
+        figcaption {
+            color: grey; /* Set caption text color to grey */
+            font-size: 0.9rem; /* Adjust font size for consistency */
+            text-align: center; /* Center-align the captions */
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-page">Welcome to My Personal Website</div>
+    <header>
+        <a href="#about" onclick="showSection('about')">About Me</a>
+        <a href="#research" onclick="showSection('research')">Research</a>
+        <a href="#courses" onclick="showSection('courses')">Courses</a>
+        <a href="#more" onclick="showSection('more')">More</a>
+    </header>
+    <section id="about" class="active">
+        <h2 style="margin-bottom: 30px;">About Me</h2> <!-- Adjusted margin-bottom for the title -->
+        <div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;"> <!-- Added margin-top to the photo container -->
+            <!-- Picture -->
+            <div>
+                <img src="Photo.jpg" alt="Ziteng Dong" style="width: 150px; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <p style="text-align: center; color: grey; font-size: 0.9rem; margin-top: 5px;">Credit: Xian Shuai</p>
+            </div>
+            <!-- Text Content -->
+            <div style="flex: 1;">
+                <p>Hello! I'm Ziteng Dong, a research assistant in quantitative trading at a private equity fund management company in Hangzhou, China.
+                    <br>
+                    <br>I am very interested in a research career and currently looking for a PhD position in Finance/Business. My interests lie in people's behavior and decision-making and financial data analysis.
+                </p>
+                <h3>How to Contact Me</h3>
+                <p>You can reach me at: 
+                    <a href="mailto:dongzt722@163.com" style="font-weight: bold; text-decoration: underline;">dongzt722@163.com</a><br>
+                    Phone: +86 15090556116
+                </p>
+                <p>
+                    <a href="CV-Ziteng Dong.pdf" download="Ziteng_Dong_CV.pdf" style="font-weight: bold; text-decoration: underline;" target="_blank">Download My CV</a>
+                </p>
+            </div>
+        </div>
+        <h3>Education</h3>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 20px; display: flex; align-items: center;">
+                <img src="StA_Logo.png" alt="University of St Andrews Logo" style="width: 33%; margin-right: 20px;">
+                <div>
+                    <strong>MSc Applied Statistics and Datamining</strong><br>
+                    University of St Andrews<br>
+                    <em>Distinction, Dean's List</em><br>
+                    Grade: 17/20
+                </div>
+            </li>
+            <li style="margin-bottom: 20px; display: flex; align-items: center;">
+                <img src="PolyU_Logo.png" alt="The Hong Kong Polytechnic University Logo" style="width: 33%; margin-right: 20px;">
+                <div>
+                    <strong>Master of Finance (Investment Management)</strong><br>
+                    The Hong Kong Polytechnic University<br>
+                    <em>Distinction</em><br>
+                    Grade: 3.66/4.3
+                </div>
+            </li>
+            <li style="margin-bottom: 20px; display: flex; align-items: center;">
+                <img src="HUEL_Logo.png" alt="Henan University of Economics and Law Logo" style="width: 33%; margin-right: 20px;">
+                <div>
+                    <strong>Bachelor's Degree of Economics in Investment</strong><br>
+                    Henan University of Economics and Law<br>
+                    <em>Outstanding Graduate</em><br>
+                    Grade: 90/100
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="research">
+        <h2>Research</h2>
+        <div>
+            <p>
+                The followings are brief descriptions of my MSc Dissertation at St Andrews and project paper at PolyU.
+            </p>
+
+            <h3>MSc Dissertation</h3>
+            <p><strong>Title:</strong> "Industry Classification Prediction Using Hierarchical Classification"</p>
+            <p><strong>Supervisor:</strong> Dr. Giorgos Minas</p>
+            <p style="text-align: justify;">
+                <strong>Abstract:</strong> Accurately categorizing companies is crucial for both academic and business communities to better understand their financial decisions and market behavior. Previous studies mainly focused on predicting the North American Industry Classification System (NAICS) codes and were limited to flat classification algorithms. It remains a challenge to account for the hierarchical structure of the industry classification system. This research extends previous studies by leveraging the hierarchical classification algorithms to predict the Global Industry Classification Standard (GICS) codes based on financial statement data. The hierarchical model we trained used the local classifier per node approach and achieved high accuracy, indicating a strong performance in predicting GICS codes. Additionally, we found predictions on deeper levels tend to result in lower performance. We tackled the data imbalance issue in industry distribution with a novel resampling method tailored for hierarchical datasets. We also compared the success of hierarchical classification models and flat classification models, finding that hierarchical classification is better at predicting GICS codes.
+            </p>
+            <p>
+                <a href="dissertation_slides.pdf" download="Dissertation_Slides.pdf" style="font-weight: bold; text-decoration: underline;" target="_blank">Download Slides</a>
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <!-- Pictures for MSc Dissertation -->
+                <figure style="text-align: center; max-width: 300px;">
+                    <img src="dissertation_chart.png" alt="Dissertation Chart" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <figcaption>
+                        <strong>Figure 1:</strong> Machine Learning Model Performance<br>
+                        <em>This chart illustrates the accuracy of different machine learning models in predicting stock price movements.</em>
+                    </figcaption>
+                </figure>
+                <figure style="text-align: center; max-width: 300px;">
+                    <img src="dissertation_data.png" alt="Dissertation Data Analysis" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <figcaption>
+                        <strong>Figure 2:</strong> Data Analysis<br>
+                        <em>This figure shows the preprocessing and feature extraction steps for financial time series data.</em>
+                    </figcaption>
+                </figure>
+                <figure style="text-align: center; max-width: 300px;">
+                    <img src="dissertation_results.png" alt="Dissertation Results" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <figcaption>
+                        <strong>Figure 3:</strong> Results Comparison<br>
+                        <em>This chart compares the performance of different machine learning models.</em>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3>Project Paper</h3>
+            <p><strong>Title:</strong> "Did Chinese Convertible Bondholders Make the Right Decision on Converting Bonds to Stocks?"</p>
+            <p><strong>Supervisor:</strong> Dr. Gang Li</p>
+            <p style="text-align: justify;">
+                <strong>Abstract:</strong> This paper analyzes the early exercise of Shanghai Stock Exchange (SSE) and Shenzhen Stock Exchange (SZSE) listed convertible bonds by investors over the 2017-2022 period. We present two main findings. First, there are early exercises that can be identified as clearly irrational in SSE and SZSE, and 40% of the actual early exercise violates the rational choice of investors and over 70% of irrational conversion behaviors occur when the convertible bonds have 2 to 3 years left to maturity. Second, weekday distribution of irrational conversions is almost evenly distributed, but the distribution of irrational conversion amount is concentrated on Fridays, possibly indicating the presence of a dividend effect in the market. Additionally, the regression results support our hypothesis that several factors including investors with smaller bond amounts, bonds further from maturity, higher potential conversion loss and greater stock price daily influence the likelihood of irrational conversion behavior among bondholders.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <!-- Pictures for Project Paper -->
+                <figure style="text-align: center; max-width: 300px;">
+                    <img src="behavioral_bias.png" alt="Behavioral Bias Analysis" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <figcaption>
+                        <strong>Figure 4:</strong> Behavioral Bias Analysis<br>
+                        <em>This diagram highlights the key psychological biases affecting investment decisions.</em>
+                    </figcaption>
+                </figure>
+                <figure style="text-align: center; max-width: 300px;">
+                    <img src="bias_mitigation.png" alt="Bias Mitigation Strategies" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <figcaption>
+                        <strong>Figure 5:</strong> Bias Mitigation Strategies<br>
+                        <em>This figure outlines strategies to mitigate psychological biases in investment decisions.</em>
+                    </figcaption>
+                </figure>
+                <figure style="text-align: center; max-width: 300px;">
+                    <img src="investment_decision.png" alt="Investment Decision Framework" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <figcaption>
+                        <strong>Figure 6:</strong> Investment Decision Framework<br>
+                        <em>This framework integrates behavioral insights into investment decision-making.</em>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section id="courses">
+        <h2>Courses</h2>
+        <div>
+            <h3>Finance</h3>
+            <ul>
+                <li>
+                    <strong>Accounting for Business Analysis</strong>
+                    <p>This course focuses on analyzing financial statements to make informed business decisions.</p>
+                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="accounting_figure1.jpg" alt="Accounting Figure 1" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 1:</strong> <em>Accounting Analysis</em>
+                            </figcaption>
+                        </figure>
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="accounting_figure2.jpg" alt="Accounting Figure 2" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 2:</strong> <em>Financial Statements</em>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <strong>Fixed Income Securities</strong>
+                    <p>This course covers the valuation and risk management of fixed income securities like bonds.</p>
+                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="fixed_income_figure1.jpg" alt="Fixed Income Figure 1" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 1:</strong> <em>Bond Pricing</em>
+                            </figcaption>
+                        </figure>
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="fixed_income_figure2.jpg" alt="Fixed Income Figure 2" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 2:</strong> <em>Yield Curves</em>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <strong>Finance and Strategy</strong>
+                    <p>This course explores the integration of financial principles into strategic business planning.</p>
+                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="finance_strategy_figure1.jpg" alt="Finance Strategy Figure 1" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 1:</strong> <em>Strategic Planning</em>
+                            </figcaption>
+                        </figure>
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="finance_strategy_figure2.jpg" alt="Finance Strategy Figure 2" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 2:</strong> <em>Financial Models</em>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li>
+                    <strong>International Financial Management</strong>
+                    <p>This course examines financial management in a global context, including exchange rates and risk management.</p>
+                    <div style="display: flex; gap: 20px; margin-top: 10px;">
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="intl_finance_figure1.jpg" alt="International Finance Figure 1" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 1:</strong> <em>Exchange Rates</em>
+                            </figcaption>
+                        </figure>
+                        <figure style="text-align: center; max-width: 150px;">
+                            <img src="intl_finance_figure2.jpg" alt="International Finance Figure 2" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <figcaption>
+                                <strong>Figure 2:</strong> <em>Risk Management</em>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="more">
+        <h2>More</h2>
+        <div>
+            <h3>Voluntary Work</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <strong>Covid-19 Pandemic Response Volunteer ----2020</strong>
+                        <p style="margin: 0;">- Served as class representative to implement university and community pandemic control policies.</p>
+                        <p style="margin: 0;">- Distributed medical supplies (e.g., masks, sanitizers) across campus and adjacent neighborhoods, ensuring safe access for students and residents.</p>
+                    </div>
+                    <img src="covid_volunteer.jpg" alt="Covid-19 Volunteer" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                </li>
+                <li style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <strong>Campus-Wide Donation Drive Organizer ----2021</strong>
+                        <p style="margin: 0;">- Planned and hosted a successful donation campaign, attracting participation from students, staff, and local community residents.</p>
+                        <p style="margin: 0;">- Collected and delivered donations (necessities, clothes, medicine) to the local Red Cross in Xinxiang, Henan — a flood-affected area near the university.</p>
+                    </div>
+                    <img src="donation_drive.jpg" alt="Donation Drive" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                </li>
+            </ul>
+            <h3>Non-Academic Activities</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <strong>PolyU INSPIRE Mentorship Programme</strong>
+                        <p style="margin: 0;">
+                            <strong>Mentor:</strong> Ms. Jin Su, Entrepreneur, MBA Lecturer at Zhengjia University of Finance & Economics
+                        </p>
+                        <p style="margin: 0;">- A structured mentorship program, focusing on career development and entrepreneurship.</p>
+                    </div>
+                    <img src="mentorship_program.jpg" alt="Mentorship Program" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                </li>
+                <li style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <strong>Future Banking Bridging Programme</strong>
+                        <p style="margin: 0;">
+                            <strong>Hoster:</strong> Hong Kong Monetary Authority & Hong Kong Institute of Bankers
+                        </p>
+                        <p style="margin: 0;">- Learned practical knowledge in popular areas of banking, including Banking knowledge, ESG, Soft skills, and Technology (B.E.S.T).</p>
+                        <p style="margin: 0;">- Participated in a series of workshops and seminars, including "The Future of Banking" and "Digital Banking and Fintech".</p>
+                        <p style="margin: 0;">- Engaged in networking opportunities with industry professionals and peers.</p>
+                    </div>
+                    <img src="banking_program.jpg" alt="Banking Program" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Ziteng Dong. All rights reserved.</p>
+    </footer>
+    <script>
+        // Hide welcome page and show the default section
+        document.getElementById('welcome-page').onclick = function () {
+            this.style.display = 'none'; // Hide the welcome page
+            document.querySelector('section.active').style.display = 'block'; // Show the default section
+        };
+
+        // Function to show the selected section and hide others
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                    section.style.display = 'block';
+                } else {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <script>
+        // Hide welcome page and show the selected section
+        function showSection(sectionId) {
+            // Hide the welcome page
+            document.getElementById('welcome-page').style.display = 'none';
+
+            // Show the selected section and hide others
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                    section.style.display = 'block';
+                } else {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                }
+            });
+
+            // Scroll to the top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scrolling effect
+            });
+        }
+    </script>
+</body>
+</html>
