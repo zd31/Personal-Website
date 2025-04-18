@@ -26,6 +26,13 @@
             font-size: 2rem;
             cursor: pointer;
             z-index: 1000;
+            transition: height 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+        }
+
+        #welcome-page.hidden {
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
         }
         header {
             position: fixed;
@@ -40,7 +47,10 @@
             align-items: center; /* Center the buttons vertically */
             padding: 1rem;
             z-index: 1000;
-            transition: background 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        header.hidden {
+            transform: translateY(-80%);
         }
         header:hover {
             background: rgba(90, 24, 154, 0.5); /* More transparent on hover */
@@ -140,7 +150,12 @@
     </style>
 </head>
 <body>
-    <div id="welcome-page">Welcome to My Personal Website</div>
+    <div id="welcome-page">
+        <div style="text-align: center;">
+            <p>Welcome to My Personal Website</p>
+            <p style="font-size: 1rem; margin-top: 10px;">Click to Explore</p>
+        </div>
+    </div>
     <header>
         <a href="#about" onclick="showSection('about')">About Me</a>
         <a href="#research" onclick="showSection('research')">Research</a>
@@ -421,6 +436,9 @@
                         </figcaption>
                     </figure>
                 </div>
+                <p style="margin-top: 10px;">
+                    <a href="MultiVar_Report.pdf" download="Facebook_Metrics_Clustering.pdf" style="font-weight: bold; text-decoration: underline;">Download Analysis on the Facebook Metrics Data Using Clustering</a>
+                </p>
             </li>
             <li>
                 <strong>Knowledge Discovery and Datamining</strong>
@@ -549,23 +567,12 @@
     <script>
         // Hide welcome page and show the default section
         document.getElementById('welcome-page').onclick = function () {
-            this.style.display = 'none'; // Hide the welcome page
-            document.querySelector('section.active').style.display = 'block'; // Show the default section
+            this.classList.add('hidden'); // Add the hidden class for smooth transition
+            setTimeout(() => {
+                this.style.display = 'none'; // Completely hide the element after the transition
+                document.querySelector('section.active').style.display = 'block'; // Show the default section
+            }, 500); // Match the transition duration (0.5s)
         };
-
-        // Function to show the selected section and hide others
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.add('active');
-                    section.style.display = 'block';
-                } else {
-                    section.classList.remove('active');
-                    section.style.display = 'none';
-                }
-            });
-        }
     </script>
     <script>
         // Hide welcome page and show the selected section
@@ -591,6 +598,27 @@
                 behavior: 'smooth' // Smooth scrolling effect
             });
         }
+    </script>
+    <script>
+        // JavaScript to handle header visibility on scroll
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down, hide the header
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up, show the header
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Show the header when the cursor is placed on it
+        header.addEventListener('mouseenter', () => {
+            header.classList.remove('hidden');
+        });
     </script>
 </body>
 </html>
